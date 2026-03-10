@@ -92,7 +92,7 @@ export const Hero = () => {
                         {t.hero.primaryButton}
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
-                    <button onClick={() => scrollTo('#specialization')} className="w-full sm:w-auto px-10 py-4 text-sm md:text-base font-bold text-slate-700 bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all shadow-sm active:scale-95 duration-300" aria-label={t.hero.secondaryButton}>
+                    <button onClick={() => scrollTo('#ecosystem')} className="w-full sm:w-auto px-10 py-4 text-sm md:text-base font-bold text-slate-700 bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all shadow-sm active:scale-95 duration-300" aria-label={t.hero.secondaryButton}>
                         {t.hero.secondaryButton}
                     </button>
                 </motion.div>

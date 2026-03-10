@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import AgroContext from "@/components/AgroContext";
 import Challenges from "@/components/Challenges";
 import Opportunity from "@/components/Opportunity";
+import Ecosystem from "@/components/Ecosystem";
 import Services from "@/components/Services";
 import Technology from "@/components/Technology";
 import Specialization from "@/components/Specialization";
@@ -31,6 +32,7 @@ export default async function Home({
         <AgroContext />
         <Challenges />
         <Opportunity />
+        <Ecosystem />
         <Services />
         <Technology />
         <Specialization />

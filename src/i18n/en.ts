@@ -3,10 +3,11 @@ import { pt } from "./pt";
 export const en: typeof pt = {
     navbar: {
         logo: "TIVOR",
-        item1: "Corporate Overview",
-        item2: "The Challenge",
-        item3: "Why TIVOR?",
-        item4: "Ecosystem",
+        item1: "TIVOR",
+        item2: "Challenges",
+        item3: "Solutions",
+        item4: "HUB JEE",
+        item5: "Ecosystem",
         cta: "Contact Us"
     },
     hero: {
@@ -19,6 +20,43 @@ export const en: typeof pt = {
         description3: "and financial control of agribusiness to a benchmark of global excellence.",
         primaryButton: "Discover TIVOR",
         secondaryButton: "Our Ecosystem"
+    },
+    ecosystem: {
+        badge: "Business Intelligence Ecosystem",
+        titleLine1: "JEE Group",
+        titleLine2: "Total Integration.",
+        groupDesc: "Ecosystem focused on management, technology, and intelligence solutions.",
+        hubTitle: "JEE Technological HUB",
+        hubDesc: "Development of digital tools and automation solutions.",
+        infraTitle: "Complete Infrastructure",
+        infraDesc: "Total integration for high-performance business management.",
+        hubBadge: "The HUB",
+        hubMainDesc: "Technology that boosts financial architecture, transforming data into management intelligence for agribusiness. The HUB expands the capacity for planning, control, and decision making.",
+        hubFeatures: [
+            { title: "Automation", desc: "Accounting and administrative processes." },
+            { title: "Integration", desc: "Financial and operational data." },
+            { title: "Dashboards", desc: "Clear and intuitive vision." },
+            { title: "Consolidation", desc: "Unified business information." },
+            { title: "Analysis", desc: "Precise strategic indicators." },
+            { title: "Monitoring", desc: "Real-time performance." }
+        ],
+        combinationBadge: "TIVOR + HUB",
+        combinationTitle1: "New Management",
+        combinationTitle2: "Infrastructure.",
+        combinationDesc: "For agribusiness, integrating technology and finance.",
+        combinationUnitesTitle: "The combination unites:",
+        combinationUnites: [
+            "Financial Architecture",
+            "Corporate Governance",
+            "Technology and Automation",
+            "Data Intelligence"
+        ],
+        focusTitle: "Operational structure focused on:",
+        focusItems: [
+            "Results control and planning",
+            "Facilitated access to credit and capital",
+            "Efficiency, low risk, and growth"
+        ]
     },
     agroContext: {
         badge: "The Current Paradigm",

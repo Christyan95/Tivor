@@ -1,10 +1,11 @@
 export const pt = {
     navbar: {
         logo: "TIVOR",
-        item1: "Apresentação Institucional",
-        item2: "O Desafio",
-        item3: "Por que a TIVOR?",
-        item4: "Ecossistema",
+        item1: "A TIVOR",
+        item2: "Desafios",
+        item3: "Soluções",
+        item4: "HUB JEE",
+        item5: "Ecossistema",
         cta: "Fale Conosco"
     },
     hero: {
@@ -17,6 +18,43 @@ export const pt = {
         description3: "e o controle financeiro do agronegócio a um patamar de excelência global.",
         primaryButton: "Descubra a TIVOR",
         secondaryButton: "Nosso Ecossistema"
+    },
+    ecosystem: {
+        badge: "Ecossistema de Inteligência Empresarial",
+        titleLine1: "Grupo JEE",
+        titleLine2: "Integração Total.",
+        groupDesc: "Ecossistema focado em soluções de gestão, tecnologia e inteligência.",
+        hubTitle: "HUB Tecnológico JEE",
+        hubDesc: "Desenvolvimento de ferramentas digitais e soluções de automação.",
+        infraTitle: "Infraestrutura Completa",
+        infraDesc: "Integração total para gestão empresarial de alta performance.",
+        hubBadge: "O HUB",
+        hubMainDesc: "Tecnologia que potencializa a arquitetura financeira, transformando dados em inteligência de gestão para o agronegócio. O HUB expande a capacidade de planejamento, controle e tomada de decisões.",
+        hubFeatures: [
+            { title: "Automação", desc: "Processos contábeis e administrativos." },
+            { title: "Integração", desc: "Dados financeiros e operacionais." },
+            { title: "Dashboards", desc: "Visão clara e intuitiva." },
+            { title: "Consolidação", desc: "Informações empresariais unificadas." },
+            { title: "Análise", desc: "Indicadores estratégicos precisos." },
+            { title: "Monitoramento", desc: "Performance em tempo real." }
+        ],
+        combinationBadge: "TIVOR + HUB",
+        combinationTitle1: "Nova Infraestrutura",
+        combinationTitle2: "de Gestão.",
+        combinationDesc: "Para o agronegócio, integrando tecnologia e finanças.",
+        combinationUnitesTitle: "A combinação une:",
+        combinationUnites: [
+            "Arquitetura Financeira",
+            "Governança Corporativa",
+            "Tecnologia e Automação",
+            "Inteligência de Dados"
+        ],
+        focusTitle: "Estrutura operacional focada em:",
+        focusItems: [
+            "Controle de resultados e planejamento",
+            "Acesso facilitado a crédito e capital",
+            "Eficiência, baixo risco e crescimento"
+        ]
     },
     agroContext: {
         badge: "O Paradigma Atual",

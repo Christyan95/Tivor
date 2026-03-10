@@ -12,7 +12,8 @@ const navLinks = [
     { key: "item1", href: "#context" },
     { key: "item2", href: "#challenges" },
     { key: "item3", href: "#opportunity" },
-    { key: "item4", href: "#specialization" },
+    { key: "item4", href: "#ecosystem" },
+    { key: "item5", href: "#specialization" },
 ];
 
 const Navbar = () => {

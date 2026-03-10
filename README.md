@@ -46,7 +46,8 @@ TIVOR é uma **corporação especializada em Arquitetura Financeira e Governanç
 - 📱 **Responsive** — Mobile-first com breakpoints sm/md/lg/xl
 - ⚡ **Performance** — Imagens WebP, lazy load 3D, font optimization
 - ♿ **Acessível** — Aria-labels, semantic HTML, keyboard navigation
-- 🔍 **SEO Dinâmico** — Meta tags e OpenGraph por idioma
+- 🔍 **SEO Dinâmico** — Meta tags, OpenGraph e Twitter Cards por idioma
+- 🏢 **HUB JEE** — Arquitetura de componente dedicado para ecossistema corporativo
 
 ---
 
@@ -129,6 +130,7 @@ Browser Request → Next.js Middleware (locale detection)
 │   │   ├── AgroContext.tsx         # Contexto do agro + parallax cards
 │   │   ├── Challenges.tsx          # Desafios do setor
 │   │   ├── Opportunity.tsx         # Oportunidade + nascimento TIVOR
+│   │   ├── Ecosystem.tsx           # Ecossistema Grupo JEE e HUB Tecnológico
 │   │   ├── Services.tsx            # 5 pilares de serviço
 │   │   ├── Technology.tsx          # Stack tecnológica + 3D engine (lazy)
 │   │   ├── TechCanvas.tsx          # Three.js Canvas isolado (dynamic)
@@ -177,6 +179,7 @@ export const pt = {
     agroContext: { badge, titleLine1..2, desc1, callout1..3, stats... },
     challenges: { badge, factors[], problems[] },
     opportunity: { badge, bullets, responseTitle... },
+    ecosystem: { badge, hubFeatures[], combinationUnites[], focusItems[] },
     services: { pillars: [{ num, title, desc }] },
     technology: { tools: [{ name, desc }] },
     specialization: { specializations[], targets[] },
@@ -300,6 +303,8 @@ Hero (#hero)
 AgroContext (#context)
 Challenges (#challenges)
 Opportunity (#opportunity)
+Ecosystem (#ecosystem)
+  └── Grupo JEE → HUB JEE → TIVOR + HUB
 Services (#services)
 Technology (#technology)
   └── TechCanvas (lazy) → CoreEngine3D
@@ -348,6 +353,7 @@ O SEO é implementado via `generateMetadata()` no layout, gerando tags dinâmica
 | `<meta description>` | A TIVOR é uma corporação especializada em... | TIVOR is a corporation specialized in... |
 | `og:title` | Mesmo do title | Mesmo do title |
 | `og:type` | website | website |
+| `twitter:card` | summary_large_image | summary_large_image |
 | Favicon | `/icone.webp` | `/icone.webp` |
 
 ### Boas Práticas Implementadas
