@@ -237,5 +237,8 @@ export const en: typeof pt = {
             phone: "+55 (11) 99999-9999",
             location: "São Paulo, SP — Brazil"
         }
+    },
+    loading: {
+        text: "Loading"
     }
 };

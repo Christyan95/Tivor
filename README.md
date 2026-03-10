@@ -122,6 +122,7 @@ Browser Request → Next.js Middleware (locale detection)
 │   │       └── page.tsx            # Composição de todas as seções
 │   │
 │   ├── 📂 components/
+│   │   ├── LoadingScreen.tsx       # Tela de carregamento animada fullscreen
 │   │   ├── Navbar.tsx              # Nav fixa + menu mobile + smooth scroll
 │   │   ├── LanguageSwitcher.tsx    # Toggle PT/EN
 │   │   ├── Hero.tsx                # Hero com 3D background (lazy)
@@ -296,6 +297,7 @@ Nenhuma variável de ambiente é necessária para o deploy básico. O projeto é
 ### Fluxo de Seções (ordem de renderização)
 
 ```
+LoadingScreen (inicial)
 Navbar (fixo)
   └── LanguageSwitcher
 Hero (#hero)

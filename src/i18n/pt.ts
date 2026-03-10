@@ -235,5 +235,8 @@ export const pt = {
             phone: "+55 (11) 99999-9999",
             location: "São Paulo, SP — Brasil"
         }
+    },
+    loading: {
+        text: "Carregando"
     }
 };
