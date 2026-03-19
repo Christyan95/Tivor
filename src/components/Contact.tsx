@@ -7,18 +7,9 @@ import { useTranslation } from "@/i18n/TranslationContext";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { contactSchema, type ContactFormData } from "@/lib/validations";
 import { toast } from "sonner";
 
-const contactSchema = z.object({
-    name: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
-    email: z.string().email("E-mail inválido"),
-    company: z.string().optional(),
-    message: z.string().min(10, "A mensagem deve ter pelo menos 10 caracteres"),
-    honeypot: z.string().optional(),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
 
 export const Contact = () => {
     const t = useTranslation();

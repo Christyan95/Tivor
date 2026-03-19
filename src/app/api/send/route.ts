@@ -1,24 +1,26 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import { contactSchema } from '@/lib/validations';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
-    const { name, email, company, message, honeypot } = await request.json();
+    const body = await request.json();
+    
+    // Validação master via Zod
+    const validation = contactSchema.safeParse(body);
+    
+    if (!validation.success) {
+      return NextResponse.json({ error: "Dados inválidos" }, { status: 400 });
+    }
 
-    // Bloqueio simples de spam via honeypot
+    const { name, email, company, message, honeypot } = validation.data;
+
+    // Bloqueio robusto de spam via honeypot
     if (honeypot) {
       return NextResponse.json({ error: "Spam detectado" }, { status: 400 });
     }
-
-    if (!name || !email || !message) {
-      return NextResponse.json({ error: "Campos obrigatórios faltando" }, { status: 400 });
-    }
-
-    console.log('Tentando enviar e-mail via Resend...', { name, email, company });
-    console.log('API Key existe?', !!process.env.RESEND_API_KEY);
-    console.log('Email de destino:', process.env.CONTACT_EMAIL || 'atendimento@tivor.agr.br');
 
     const data = await resend.emails.send({
       from: 'Tivor Site <contato@tivor.agr.br>',
@@ -47,16 +49,16 @@ export async function POST(request: Request) {
       `,
     });
 
-    console.log('Resposta do Resend:', data);
-
     if (data.error) {
-      console.error('Erro retornado pelo Resend:', data.error);
-      return NextResponse.json({ error: data.error }, { status: 400 });
+       // Log de erro real apenas no servidor, retorno sanitizado para o cliente
+      console.error('API Error:', data.error);
+      return NextResponse.json({ error: "Falha ao processar envio" }, { status: 500 });
     }
 
-    return NextResponse.json(data);
+    return NextResponse.json({ success: true, id: data.data?.id });
   } catch (error) {
-    console.error('Erro na rota de API:', error);
-    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+    console.error('Core Error:', error);
+    return NextResponse.json({ error: "Erro interno do servidor" }, { status: 500 });
   }
 }
+
