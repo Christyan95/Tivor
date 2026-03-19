@@ -240,7 +240,7 @@ Definida em `tailwind.config.js`, a paleta TIVOR sobrescreve os padrões do Tail
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/tivor-landing.git
+git clone https://github.com/Christyan95/Tivor.git
 cd tivor-landing
 
 # 2. Instale as dependências
@@ -370,6 +370,6 @@ O SEO é implementado via `generateMetadata()` no layout, gerando tags dinâmica
 
 ## 📄 Licença
 
-Projeto privado — © 2026 TIVOR ARCHITECTURE. Todos os direitos reservados.
+Projeto privado — © 2026 TIVOR. Todos os direitos reservados.
 
-Desenvolvido por **JEE**.
+Desenvolvido por **Christyan Silva**.

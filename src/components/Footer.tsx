@@ -93,8 +93,8 @@ export const Footer = () => {
           </span>
 
           <div className="flex items-center gap-3 bg-white border border-slate-200 shadow-sm px-5 py-2.5 rounded-full hover:border-slate-300 transition-colors">
-            <span className="text-slate-400 text-[10px] tracking-widest uppercase font-bold">powered by</span>
-            <span className="text-slate-900 font-black tracking-[0.2em] text-sm">JEE</span>
+            <span className="text-slate-400 text-[10px] tracking-widest uppercase font-bold">developed by</span>
+            <span className="text-slate-900 font-bold tracking-tight text-sm">Christyan Silva</span>
           </div>
         </motion.div>
 
