@@ -53,6 +53,8 @@ export async function generateMetadata({
   };
 }
 
+import { Toaster } from "sonner";
+
 export default async function RootLayout({
   children,
   params,
@@ -64,6 +66,7 @@ export default async function RootLayout({
   return (
     <html lang={resolvedParams.locale}>
       <body className={`${geistSans.variable} antialiased`}>
+        <Toaster position="top-right" richColors />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

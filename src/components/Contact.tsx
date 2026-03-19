@@ -4,8 +4,58 @@ import { motion } from "framer-motion";
 import { Send, Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 import { useTranslation } from "@/i18n/TranslationContext";
 
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { toast } from "sonner";
+
+const contactSchema = z.object({
+    name: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
+    email: z.string().email("E-mail inválido"),
+    company: z.string().optional(),
+    message: z.string().min(10, "A mensagem deve ter pelo menos 10 caracteres"),
+    honeypot: z.string().optional(),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
 export const Contact = () => {
     const t = useTranslation();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm<ContactFormData>({
+        resolver: zodResolver(contactSchema),
+    });
+
+    const onSubmit = async (data: ContactFormData) => {
+        setIsSubmitting(true);
+        try {
+            const response = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || errorData.error || "Erro ao enviar mensagem");
+            }
+
+            toast.success(t.contact.badge === "Talk to TIVOR" ? "Message sent successfully!" : "Mensagem enviada com sucesso!");
+            reset();
+        } catch (error: any) {
+            console.error("Erro no envio:", error);
+            toast.error(error.message || (t.contact.badge === "Talk to TIVOR" ? "Failed to send message." : "Erro ao enviar mensagem."));
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <section id="contact" className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
@@ -107,23 +157,30 @@ export const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:col-span-3"
                     >
-                        <form className="bg-white border border-slate-200 rounded-[32px] p-8 sm:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] space-y-6">
+                        <form onSubmit={handleSubmit(onSubmit)} className="bg-white border border-slate-200 rounded-[32px] p-8 sm:p-10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.06)] space-y-6">
+                            {/* Honeypot field - invisível para humanos */}
+                            <input type="text" {...register("honeypot")} className="hidden" aria-hidden="true" />
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">{t.contact.nameLabel}</label>
                                     <input
                                         type="text"
+                                        {...register("name")}
                                         placeholder={t.contact.namePlaceholder}
-                                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all placeholder:text-slate-400"
+                                        className={`w-full bg-slate-50 border ${errors.name ? 'border-red-400' : 'border-slate-200'} rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all placeholder:text-slate-400`}
                                     />
+                                    {errors.name && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.name.message}</p>}
                                 </div>
                                 <div className="space-y-2">
                                     <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">{t.contact.emailLabel}</label>
                                     <input
                                         type="email"
+                                        {...register("email")}
                                         placeholder={t.contact.emailPlaceholder}
-                                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all placeholder:text-slate-400"
+                                        className={`w-full bg-slate-50 border ${errors.email ? 'border-red-400' : 'border-slate-200'} rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all placeholder:text-slate-400`}
                                     />
+                                    {errors.email && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.email.message}</p>}
                                 </div>
                             </div>
 
@@ -131,6 +188,7 @@ export const Contact = () => {
                                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">{t.contact.companyLabel}</label>
                                 <input
                                     type="text"
+                                    {...register("company")}
                                     placeholder={t.contact.companyPlaceholder}
                                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all placeholder:text-slate-400"
                                 />
@@ -140,19 +198,31 @@ export const Contact = () => {
                                 <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">{t.contact.messageLabel}</label>
                                 <textarea
                                     rows={5}
+                                    {...register("message")}
                                     placeholder={t.contact.messagePlaceholder}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all resize-none placeholder:text-slate-400"
+                                    className={`w-full bg-slate-50 border ${errors.message ? 'border-red-400' : 'border-slate-200'} rounded-xl px-5 py-3.5 text-slate-800 text-sm font-medium focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-100 transition-all resize-none placeholder:text-slate-400`}
                                 />
+                                {errors.message && <p className="text-red-500 text-[10px] uppercase font-bold">{errors.message.message}</p>}
                             </div>
 
                             <motion.button
                                 type="submit"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-emerald-600 transition-all flex items-center justify-center gap-3 text-sm shadow-lg hover:shadow-emerald-500/20 active:scale-95 duration-300 group"
+                                disabled={isSubmitting}
+                                whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                                whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+                                className={`w-full py-4 bg-slate-900 text-white font-bold rounded-2xl ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-emerald-600'} transition-all flex items-center justify-center gap-3 text-sm shadow-lg hover:shadow-emerald-500/20 active:scale-95 duration-300 group`}
                             >
-                                {t.contact.submitButton}
-                                <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                {isSubmitting ? (
+                                    <>
+                                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                        {t.contact.submitButton === "Enviar Mensagem" ? "Enviando..." : "Sending..."}
+                                    </>
+                                ) : (
+                                    <>
+                                        {t.contact.submitButton}
+                                        <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    </>
+                                )}
                             </motion.button>
                         </form>
                     </motion.div>

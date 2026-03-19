@@ -4,7 +4,7 @@ export const pt = {
         item1: "A TIVOR",
         item2: "Desafios",
         item3: "Soluções",
-        item4: "HUB JEE",
+        item4: "Hub Jee",
         item5: "Ecossistema",
         cta: "Fale Conosco"
     },
@@ -231,9 +231,9 @@ export const pt = {
         messagePlaceholder: "Conte sobre o desafio da sua operação...",
         submitButton: "Enviar Mensagem",
         info: {
-            email: "contato@tivor.com.br",
-            phone: "+55 (11) 99999-9999",
-            location: "São Paulo, SP — Brasil"
+            email: "atendimento@tivor.agr.br",
+            phone: "+55 (34) 9 9959-2544",
+            location: "Uberaba, MG — Brasil"
         }
     },
     loading: {

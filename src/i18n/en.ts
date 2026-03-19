@@ -6,7 +6,7 @@ export const en: typeof pt = {
         item1: "TIVOR",
         item2: "Challenges",
         item3: "Solutions",
-        item4: "HUB JEE",
+        item4: "Hub Jee",
         item5: "Ecosystem",
         cta: "Contact Us"
     },
@@ -233,9 +233,9 @@ export const en: typeof pt = {
         messagePlaceholder: "Tell us about your operation's challenge...",
         submitButton: "Send Message",
         info: {
-            email: "contact@tivor.com",
-            phone: "+55 (11) 99999-9999",
-            location: "São Paulo, SP — Brazil"
+            email: "atendimento@tivor.agr.br",
+            phone: "+55 (34) 9 9959-2544",
+            location: "Uberaba, MG — Brazil"
         }
     },
     loading: {
