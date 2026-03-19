@@ -1,13 +1,18 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+/**
+ * NEXT.JS 16 PROXY (Formerly Middleware)
+ * Pattern: Request Gateway
+ */
+
 const locales = ["pt", "en"];
 const defaultLocale = "pt";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Exclude relative files and API
+    // Exclude relative files and system routes
     if (
         pathname.startsWith('/_next') ||
         pathname.startsWith('/api') ||

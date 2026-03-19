@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "@/lib/validations";
 import { toast } from "sonner";
+import { submitContactForm } from "@/app/actions/contact";
 
 
 export const Contact = () => {
@@ -27,15 +28,10 @@ export const Contact = () => {
     const onSubmit = async (data: ContactFormData) => {
         setIsSubmitting(true);
         try {
-            const response = await fetch("/api/send", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
+            const result = await submitContactForm(data);
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error?.message || errorData.error || "Erro ao enviar mensagem");
+            if (result.error) {
+                throw new Error(result.error);
             }
 
             toast.success(t.contact.badge === "Talk to TIVOR" ? "Message sent successfully!" : "Mensagem enviada com sucesso!");
