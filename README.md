@@ -28,7 +28,8 @@
 
 ## 🎯 Sobre o Projeto
 
-A **TIVOR** é uma corporação focada em Arquitetura Financeira e Governança de alto impacto para o ecossistema agrícola. Esta plataforma institucional foi desenvolvida para transparecer autoridade e excelência, integrando visualizações 3D de última geração com um backend robusto e soberano.
+A **TIVOR** é uma corporação focada em Arquitetura Financeira e Governança de alto impacto para o ecossistema agrícola. Esta plataforma institucional foi projetada e desenvolvida por **Christyan Silva** para transparecer autoridade e excelência, integrando visualizações 3D de última geração com um backend robusto e soberano.
+
 
 ---
 
@@ -188,6 +189,14 @@ npx prisma generate
 
 ---
 
-### 📜 Licença Corporativa
-© 2026 TIVOR Financial Architecture. Propriedade Intelectual Privada.
-Desenvolvido com excelência por **Christyan Silva**.
+### 👤 Autor & Desenvolvedor
+
+Este projeto foi concebido, arquitetado e desenvolvido integralmente por **Christyan Silva**. Cada linha de código, desde a infraestrutura de banco de dados até as animações 3D de alta performance, reflete o compromisso com a excelência técnica e a soberania digital.
+
+---
+
+### 📜 Licença & Propriedade
+© 2026 **TIVOR Financial Architecture**.
+Propriedade Intelectual Privada. Todos os direitos reservados.
+Desenvolvido com excelência por [**Christyan Silva**](https://github.com/Christyan95).
+
