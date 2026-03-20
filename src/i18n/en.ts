@@ -232,6 +232,11 @@ export const en: typeof pt = {
         messageLabel: "Message",
         messagePlaceholder: "Tell us about your operation's challenge...",
         submitButton: "Send Message",
+        messages: {
+            success: "Message sent successfully!",
+            error: "Failed to send message.",
+            sending: "Sending..."
+        },
         info: {
             email: "atendimento@tivor.agr.br",
             phone: "+55 (34) 9 9959-2544",

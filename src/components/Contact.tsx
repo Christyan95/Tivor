@@ -34,11 +34,11 @@ export const Contact = () => {
                 throw new Error(result.error);
             }
 
-            toast.success(t.contact.badge === "Talk to TIVOR" ? "Message sent successfully!" : "Mensagem enviada com sucesso!");
+            toast.success(t.contact.messages.success);
             reset();
         } catch (error: any) {
             console.error("Erro no envio:", error);
-            toast.error(error.message || (t.contact.badge === "Talk to TIVOR" ? "Failed to send message." : "Erro ao enviar mensagem."));
+            toast.error(error.message || t.contact.messages.error);
         } finally {
             setIsSubmitting(false);
         }
@@ -202,7 +202,7 @@ export const Contact = () => {
                                 {isSubmitting ? (
                                     <>
                                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                        {t.contact.submitButton === "Enviar Mensagem" ? "Enviando..." : "Sending..."}
+                                        {t.contact.messages.sending}
                                     </>
                                 ) : (
                                     <>

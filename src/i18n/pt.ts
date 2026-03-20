@@ -230,6 +230,11 @@ export const pt = {
         messageLabel: "Mensagem",
         messagePlaceholder: "Conte sobre o desafio da sua operação...",
         submitButton: "Enviar Mensagem",
+        messages: {
+            success: "Mensagem enviada com sucesso!",
+            error: "Erro ao enviar mensagem.",
+            sending: "Enviando..."
+        },
         info: {
             email: "atendimento@tivor.agr.br",
             phone: "+55 (34) 9 9959-2544",

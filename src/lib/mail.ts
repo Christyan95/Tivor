@@ -11,6 +11,21 @@ interface SendLeadNotificationArgs {
   message: string
 }
 
+/**
+ * Segurança Master: Escapes de caracteres para prevenir injeção de HTML no corpo do e-mail.
+ */
+function escapeHTML(str: string): string {
+  const p = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;'
+  }
+  return str.replace(/[&<>"'/]/g, s => p[s as keyof typeof p])
+}
+
 async function getAzureAccessToken() {
   const tenantId = process.env.AZURE_TENANT_ID
   const clientId = process.env.AZURE_CLIENT_ID
@@ -152,7 +167,7 @@ export async function sendLeadEmailNotification({ name, email, company, message 
                                                 <tr>
                                                     <td width="30%" style="padding: 8px 0; font-family: 'Inter', sans-serif; font-size: 14px; color: #475569; font-weight: 600;">Nome:</td>
                                                     <td width="70%" style="padding: 8px 0; font-family: 'Inter', sans-serif; font-size: 15px; color: #0f172a; font-weight: 500;">
-                                                        ${name}
+                                                        ${escapeHTML(name)}
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -164,7 +179,7 @@ export async function sendLeadEmailNotification({ name, email, company, message 
                                                 <tr>
                                                     <td width="30%" style="padding: 8px 0; font-family: 'Inter', sans-serif; font-size: 14px; color: #475569; font-weight: 600;">Empresa:</td>
                                                     <td width="70%" style="padding: 8px 0; font-family: 'Inter', sans-serif; font-size: 15px; color: #0f172a; font-weight: 500;">
-                                                        ${company || 'Não informado'}
+                                                        ${company ? escapeHTML(company) : 'Não informado'}
                                                     </td>
                                                 </tr>
                                             </table>
@@ -182,7 +197,7 @@ export async function sendLeadEmailNotification({ name, email, company, message 
                                                 💬 Mensagem Corporativa
                                             </p>
                                             <div style="font-family: 'Inter', sans-serif; font-size: 15px; color: #334155; line-height: 1.6; font-style: italic; padding-top: 10px;">
-                                                ${message.replace(/\n/g, '<br>')}
+                                                ${escapeHTML(message).replace(/\n/g, '<br>')}
                                             </div>
                                         </td>
                                     </tr>
