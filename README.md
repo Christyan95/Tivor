@@ -124,40 +124,44 @@ A TIVOR utiliza o protocolo mais seguro de nuvem da Microsoft para notificaçõe
 
 ## ⚙️ Configuração de Ambiente
 
-Crie um arquivo `.env` baseado no `.env.example`:
+Crie um arquivo `.env` baseado no `.env.example`. Este arquivo é vital para a orquestração do banco e serviços de nuvem:
 
 ```env
-# Banco de Dados
-DATABASE_URL="postgresql://user:pass@localhost:5432/testejee"
+# 1. DATABASE INFRASTRUCTURE (PostgreSQL)
+DATABASE_URL="postgresql://tivor_admin:your_secure_password@localhost:5432/tivor_db?schema=public"
 
-# Azure / Microsoft Graph
-AZURE_TENANT_ID="seu-id"
-AZURE_CLIENT_ID="seu-id"
-AZURE_CLIENT_SECRET="seu-secret"
-AZURE_SENDER_USER_EMAIL="workflow@hortsoy.com.br"
+# 2. MICROSOFT GRAPH API AUTHENTICATION (OAuth 2.0)
+AZURE_TENANT_ID="00000000-0000-0000-0000-000000000000"
+AZURE_CLIENT_ID="00000000-0000-0000-0000-000000000000"
+AZURE_CLIENT_SECRET="your_azure_app_secret_value"
 
-# Destinos
-SITE_CONTACT_EMAIL="atendimento@tivor.agr.br"
-SMTP_FROM_NAME="TIVOR Institutional"
+# 3. NOTIFICATION SERVICE CONFIGURATION
+AZURE_SENDER_USER_EMAIL="workflow@yourdomain.com.br"
+SITE_CONTACT_EMAIL="atendimento@yourdomain.com.br"
+SMTP_FROM_NAME="Friendly From"
 ```
 
 ---
 
-## 🔄 Guia de Manutenção & Recuperação Master
+## 🔄 Guia de Manutenção & Script Master
 
-Como o **`npx prisma db pull`** é uma operação que lê diretamente do banco físico, ele pode sobrescrever alterações manuais realizadas no `schema.prisma`. 
+Para garantir a soberania dos dados e a persistência do esquema de leads, o projeto conta com um script SQL de referência absoluta.
 
-Para evitar a perda das definições customizadas da TIVOR, o sistema possui um arquivo de preservação: **`prisma/TIVOR_MODELS.prisma`**.
+### ⚠️ Inicialização da Tabela `SITE_CONT` (Master SQL)
+Se você estiver resetando o banco ou iniciando em um novo ambiente, utilize o script localizado em:
+**`prisma/governance/00_MASTER_SITE_CONT.sql`**
 
-### ⚠️ O que fazer após um `db pull`?
-1. Execute o seu comando: `npx prisma db pull` (isso sincronizará as tabelas do seu PostgreSQLlegado).
-2. Abra o arquivo **`prisma/TIVOR_MODELS.prisma`**.
-3. Copie o bloco da model `Lead` (SITE_CONT).
-4. Cole no final do seu **`prisma/schema.prisma`** principal.
-5. Sincronize o código:
-   ```bash
-   npx prisma generate
-   ```
+Este script executa em bloco:
+1.  **Criação Física**: Tabela `SITE_CONT` com tipos otimizados.
+2.  **Indexação**: Performance Master para o campo de e-mail.
+3.  **Audit Trigger**: Gatilho SQL que garante a integridade do `updatedAt` independente do Prisma.
+4.  **Data Governance**: Comentários de metadados no catálogo do PostgreSQL.
+
+### Sincronização Prisma:
+Sempre que alterar o banco ou o script master, gere o cliente:
+```bash
+npx prisma generate
+```
 
 ---
 
