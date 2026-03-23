@@ -32,6 +32,7 @@ export const en: typeof pt = {
         infraDesc: "Total integration for high-performance business management.",
         hubBadge: "The HUB",
         hubMainDesc: "Technology that boosts financial architecture, transforming data into management intelligence for agribusiness. The HUB expands the capacity for planning, control, and decision making.",
+        hubCTA: "View Solutions",
         hubFeatures: [
             { title: "Automation", desc: "Accounting and administrative processes." },
             { title: "Integration", desc: "Financial and operational data." },
@@ -242,6 +243,53 @@ export const en: typeof pt = {
             phone: "+55 (34) 9 9959-2544",
             location: "Uberaba, MG — Brazil"
         }
+    },
+    hubJee: {
+        badge: "Jee Technological Hub",
+        title: "Distribution of Jee Technological Hub Solutions",
+        description: "Jee Technological Hub's proprietary solutions cover the group's main functional domains, from a central management hub to guarantees and business intelligence — with the flexibility of substitution according to the operation.",
+        solutions: [
+            {
+                id: "JeeHub",
+                title: "JeeHub",
+                desc: "Central hub for integration and access to the group's ecosystem of solutions"
+            },
+            {
+                id: "JeeRisk",
+                title: "JeeRisk",
+                desc: "Platform for management and analysis of operational and financial risks. Monitors credit exposure, portfolio concentration and real-time delinquency alerts."
+            },
+            {
+                id: "JeeGarant",
+                title: "JeeGarant",
+                desc: "Complete management of guarantees and sureties with integrated document control. CPRs, pledges and endorsements organized, traceable and legally secure."
+            },
+            {
+                id: "JeeCob",
+                title: "JeeCob",
+                desc: "Debt collection and credit recovery solution with automated rules, delinquent stratification and portfolio performance dashboards."
+            },
+            {
+                id: "JeeBI",
+                title: "JeeBI",
+                desc: "Executive dashboards with KPIs for margins, productivity and consolidated financial by crop, farm or business unit"
+            },
+            {
+                id: "JeeCount",
+                title: "JeeCount",
+                desc: "Agile generation of financial statements and indicators (KPIs), ensuring accounting accuracy for strategic decisions."
+            },
+            {
+                id: "Jee360",
+                title: "Jee360",
+                desc: "Complete overview and 360° feedbacks from all the group's workforce and leaders."
+            },
+            {
+                id: "JeeBudget",
+                title: "JeeBudget",
+                desc: "Budget planning and control by crop, crop cycle and business unit, with real-time projections and variance monitoring."
+            }
+        ]
     },
     loading: {
         text: "Loading"

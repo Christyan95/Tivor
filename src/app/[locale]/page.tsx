@@ -10,7 +10,6 @@ import Specialization from "@/components/Specialization";
 import Benefits from "@/components/Benefits";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { CustomCursor } from "@/components/CustomCursor";
 import { TranslationProvider } from "@/i18n/TranslationContext";
 import { dictionaries, Locale } from "@/i18n";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -25,10 +24,9 @@ export default async function Home({
   const dict = dictionaries[locale] || dictionaries.pt;
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800 selection:bg-cyan-500/20 font-sans cursor-default">
+    <main id="top" className="min-h-screen bg-slate-50 text-slate-800 selection:bg-cyan-500/20 font-sans">
       <TranslationProvider dictionary={dict}>
         <LoadingScreen />
-        <CustomCursor />
         <Navbar />
         <Hero />
         <AgroContext />

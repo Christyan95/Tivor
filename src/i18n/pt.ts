@@ -1,7 +1,7 @@
 export const pt = {
     navbar: {
         logo: "TIVOR",
-        item1: "A TIVOR",
+        item1: "TIVOR",
         item2: "Desafios",
         item3: "Soluções",
         item4: "Hub Jee",
@@ -30,6 +30,7 @@ export const pt = {
         infraDesc: "Integração total para gestão empresarial de alta performance.",
         hubBadge: "O HUB",
         hubMainDesc: "Tecnologia que potencializa a arquitetura financeira, transformando dados em inteligência de gestão para o agronegócio. O HUB expande a capacidade de planejamento, controle e tomada de decisões.",
+        hubCTA: "Conhecer Soluções",
         hubFeatures: [
             { title: "Automação", desc: "Processos contábeis e administrativos." },
             { title: "Integração", desc: "Dados financeiros e operacionais." },
@@ -240,6 +241,53 @@ export const pt = {
             phone: "+55 (34) 9 9959-2544",
             location: "Uberaba, MG — Brasil"
         }
+    },
+    hubJee: {
+        badge: "Hub Tecnológico Jee",
+        title: "Distribuição das Soluções Hub Tecnológico Jee",
+        description: "As soluções proprietárias do Hub Tecnológico Jee cobrem os principais domínios funcionais do grupo, desde hub central de gestão até garantias e inteligência de negócios — com flexibilidade de substituição conforme a operação.",
+        solutions: [
+            {
+                id: "JeeHub",
+                title: "JeeHub",
+                desc: "Hub central de integração e acesso ao ecossistema de soluções do grupo"
+            },
+            {
+                id: "JeeRisk",
+                title: "JeeRisk",
+                desc: "Plataforma de gestão e análise de riscos operacionais e financeiros. Monitora exposição de crédito, concentração de carteira e alertas de inadimplência em tempo real."
+            },
+            {
+                id: "JeeGarant",
+                title: "JeeGarant",
+                desc: "Gestão completa de garantias e fianças com controle documental integrado. CPRs, penhores e avais organizados, rastreáveis e juridicamente seguros."
+            },
+            {
+                id: "JeeCob",
+                title: "JeeCob",
+                desc: "Solução de cobrança e recuperação de crédito com régua automatizada, estratificação de inadimplentes e dashboards de performance da carteira."
+            },
+            {
+                id: "JeeBI",
+                title: "JeeBI",
+                desc: "Dashboards executivos com KPIs de margens, produtividade e financeiro consolidado por cultura, fazenda ou unidade de negócio"
+            },
+            {
+                id: "JeeCount",
+                title: "JeeCount",
+                desc: "Geração ágil de demonstrações financeiras e indicadores (KPIs), garantindo precisão contábil para decisões estratégicas."
+            },
+            {
+                id: "Jee360",
+                title: "Jee360",
+                desc: "Panorama completo e feedbacks 360° de toda a força de trabalho e lideranças do grupo."
+            },
+            {
+                id: "JeeBudget",
+                title: "JeeBudget",
+                desc: "Planejamento orçamentário e controle de budget por safra, cultura e unidade de negócio, com projeções e acompanhamento de desvios em tempo real."
+            }
+        ]
     },
     loading: {
         text: "Carregando"

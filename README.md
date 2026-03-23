@@ -1,12 +1,15 @@
 <div align="center">
 
 # TIVOR — High Performance Financial Architecture
-**Arquitetura Financeira e Governança para o Agronegócio**
+**Arquitetura Financeira e Governança Extraordinária para o Agronegócio**
 
-[![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?logo=next.js)](https://nextjs.org/)
-[![Prisma 7](https://img.shields.io/badge/Prisma-7.5.0-black?logo=prisma)](https://www.prisma.io/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql)](https://www.postgresql.org/)
-[![Graph API](https://img.shields.io/badge/Microsoft_Graph-v1.0-blue?logo=microsoft-outlook)](https://learn.microsoft.com/en-us/graph/overview)
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.1.6-black?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Prisma 7](https://img.shields.io/badge/Prisma-7.5.0-5a67d8?logo=prisma&logoColor=white)](https://www.prisma.io/)
+[![PostgreSQL 16](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![OAuth 2.0](https://img.shields.io/badge/OAuth-2.0-eb5424?logo=auth0&logoColor=white)](https://oauth.net/2/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+"A excelência na gestão financeira é o alicerce da soberania no agronegócio."
 
 </div>
 
@@ -14,189 +17,142 @@
 
 ## 📋 Índice
 
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Poder Superior (Soberania Digital)](#-poder-superior-soberania-digital)
-- [Tecnologias Core](#-tecnologias-core)
-- [Arquitetura Full-Stack Master](#-arquitetura-full-stack-master)
-- [Governança de Dados (SITE_CONT)](#-governança-de-dados-site_cont)
-- [Comunicação Enterprise (OAuth2)](#-comunicação-enterprise-oauth2)
-- [Segurança & Auditoria](#-segurança--auditoria)
-- [Configuração de Ambiente](#-configuração-de-ambiente)
-- [Instalação & Manutenção](#-instalação--manutenção)
+- [💎 Visão Estratégica](#-visão-estratégica)
+- [🏛️ Arquitetura de Soberania Digital](#%EF%B8%8F-arquitetura-de-soberania-digital)
+- [🚀 Stack Tecnológica de Elite](#-stack-tecnológica-de-elite)
+- [📡 Ecossistema & Hub Tecnológico Jee](#-ecossistema--hub-tecnológico-jee)
+- [🔒 Segurança & Governança Forense](#-segurança--governança-forense)
+- [🏗 Estrutura Full-Stack (Flow)](#-estrutura-full-stack-flow)
+- [📊 Engenharia de Dados (SITE_CONT)](#-engenharia-de-dados-site_cont)
+- [⚙️ Configuração de Ambiente](#-configuração-de-ambiente)
+- [🛠 Instalação & Deployment](#-instalação--deployment)
 
 ---
 
-## 🎯 Sobre o Projeto
+## 💎 Visão Estratégica
 
-A **TIVOR** é uma corporação focada em Arquitetura Financeira e Governança de alto impacto para o ecossistema agrícola. Esta plataforma institucional foi projetada e desenvolvida por **Christyan Silva** para transparecer autoridade e excelência, integrando visualizações 3D de última geração com um backend robusto e soberano.
+A **TIVOR** é uma corporação de vanguarda que redefine a **Arquitetura Financeira** no setor agrícola. Desenvolvida integralmente por **Christyan Silva**, esta plataforma não é apenas um site institucional, mas um terminal de autoridade digital que projeta confiança, precisão e modernidade. 
 
-
----
-
-## 🏛️ Poder Superior (Soberania Digital)
-
-Diferente de sistemas convencionais que dependem de middlewares externos (Resend, SendGrid), a TIVOR detém o controle absoluto de seus fluxos de dados:
-
-*   **Banco de Dados Soberano:** Armazenamento local em PostgreSQL para conformidade total.
-*   **Comunicação Direta Cloud:** Integração nativa com Microsoft Azure via OAuth 2.0 (Microsoft Graph).
-*   **Zero Resíduos de Middleware:** Sem taxas ocultas de APIs de terceiros.
+O sistema foi concebido para atender às mais rigorosas demandas de governança, integrando design premium com uma infraestrutura backend impenetrável e independente.
 
 ---
 
-## 🛠 Tecnologias Core
+## 🏛️ Arquitetura de Soberania Digital
 
-### Frontend Elite
-| Tecnologia | Versão | Uso |
+Diferente de soluções convencionais baseadas em plataformas de terceiros (SaaS), a TIVOR adota o modelo de **Soberania Absoluta**:
+
+*   **Comunicação Direta Cloud:** Sistema de e-mail integrado nativamente à Microsoft Graph API, eliminando custos e riscos de privacidade associados a middlewares como Resend ou SendGrid.
+*   **Persistência Soberana:** Todo dado capturado é armazenado em um cluster PostgreSQL proprietário, permitindo conformidade total com a LGPD e políticas internas de segurança.
+*   **Zero Resíduos Tecnológicos:** A aplicação é autocontida, garantindo que o fluxo de informação "Lead → Database → Notificação" ocorra em um ambiente controlado e criptografado.
+
+---
+
+## 🚀 Stack Tecnológica de Elite
+
+### Frontend Master
+- **Next.js 16 (App Router):** Utilização de componentes de servidor e cliente de última geração para SEO e performance.
+- **Framer Motion 12:** Motor de animações avançado para interações fluidas e feedback visual de luxo.
+- **Three.js & React Three Fiber:** Renderização 3D de alta fidelidade para representação simbólica de robustez financeira.
+- **Tailwind CSS + Design System Custom:** Estilização atômica rigorosa, garantindo consistência visual em todos os dispositivos.
+
+### Backend & Core Service
+- **Prisma ORM 7:** Manipulação de dados com segurança de tipos (Type-Safety) absoluta.
+- **PostgreSQL 16:** Banco de dados de alta disponibilidade com indexação otimizada.
+- **Microsoft Graph API (OAuth 2.0):** Autenticação baseada em tokens para envio seguro de e-mails corporativos.
+- **Next.js Proxy Gateway:** Sistema centralizado para roteamento, segurança e internacionalização (I18n).
+
+---
+
+## 📡 Ecossistema & Hub Tecnológico Jee
+
+A plataforma serve como portal de entrada para o **Hub Tecnológico Jee**, um conjunto de soluções proprietárias de alta complexidade:
+
+-   **JeeRisk:** Monitoramento de exposição de crédito e riscos financeiros em tempo real.
+-   **JeeGarant:** Gestão documental e jurídica de garantias (CPRs, Penhores, Avais).
+-   **JeeBI:** Inteligência de negócios com dashboards executivos de alta performance.
+-   **JeeCount:** Geração ágil de demonstrações financeiras com precisão contábil total.
+-   **JeeCob:** Recuperação de crédito automatizada com estratificação inteligente.
+
+---
+
+## 🔒 Segurança & Governança Forense
+
+Segurança em nível enterprise implementada em múltiplas camadas:
+
+-   **Sanitização Zod:** Filtro de entrada que bloqueia injeções e sanitiza dados (trim() e length limits).
+-   **Anti-Spam (Dual Honeypot):** Sistema de armadilha para bots invisível, prevenindo ataques de submissão em massa no servidor.
+-   **Trilha Forense:** Captura automática de metadados de acesso (IP Real, User-Agent) de cada interação, permitindo auditorias técnicas detalhadas.
+-   **Email Escape:** Tratamento rigoroso de caracteres especiais no corpo dos e-mails para prevenir injeções de script (Cross-Site Scripting via Email).
+
+---
+
+## 🏗 Estrutura Full-Stack (Flow)
+
+O fluxo de dados da TIVOR é linear, atômico e resiliente:
+
+1.  **Captura:** Interface reativa coleta dados via formulário sanitizado.
+2.  **Validação:** Server Actions executam validação tipada e filtros de spam.
+3.  **Persistência:** O lead é salvo no PostgreSQL (`SITE_CONT`) com carimbo de tempo centralizado.
+4.  **Notificação:** Disparo assíncrono via OAuth 2.0 para os e-mails corporativos dos gestores.
+
+---
+
+## 📊 Engenharia de Dados (SITE_CONT)
+
+A tabela principal de governança segue padrões de alta disponibilidade e rastreabilidade:
+
+| Coluna | Descrição Técnica | Função de Governança |
 |---|---|---|
-| [Next.js](https://nextjs.org/) | 16.1.6 | Framework Master (SSR, App Router e Proxy Gateway) |
-| [React](https://react.dev/) | 19.2.3 | Biblioteca de componentes UI moderna |
-| [Framer Motion](https://motion.dev/) | 12.x | Animações de scroll e micro-interações sênior |
-| [Three.js](https://threejs.org/) | 0.183 | Renderização 3D de alta performance |
-
-### Backend Master
-| Tecnologia | Versão | Uso |
-|---|---|---|
-| [Prisma](https://www.prisma.io/) | 7.5.0 | ORM de elite com Driver Native Adapter |
-| [PostgreSQL](https://postgresql.org/) | 16.x | Banco de Dados Relacional soberano |
-| [Microsoft Graph](https://graph.microsoft.com) | v1.0 | Comunicação de e-mail corporativa via OAuth2 |
-
----
-
-## 🏗 Arquitetura Full-Stack Master
-
-O fluxo de processamento de dados é projetado para escalabilidade e resiliência:
-
-```
-[Cliente] → [Component Contact] → [Server Action (Zod/Honeypot)]
-                                       ↓
-                               [Prisma 7 Singleton]
-                                       ↓
-                          [Audit Payload (IP/Device)] → [PostgreSQL (SITE_CONT)]
-                                       ↓
-                          [Microsoft Graph Auth] → [Notificação Outlook]
-```
-
-### Principais Pontos:
-- **Server Actions:** Eliminação de rotas de API públicas (`/api/send`) em favor de procedimentos seguros do servidor.
-- **Next.js 16 Proxy (`proxy.ts`):** Gateway inteligente para internacionalização (PT/EN) e segurança de rotas.
-- **Prisma Client Efficiency:** Uso de Adaptadores Nativos para evitar latência em ambientes de nuvem.
-
----
-
-## 📂 Governança de Dados (SITE_CONT)
-
-A estrutura do banco de dados segue padrões corporativos de governança técnica.
-
-### Tabela Oficial de Leads: `SITE_CONT`
-
-| Coluna | Atributo | Descrição |
-|---|---|---|
-| `UUID_CONT` | UUID (PK) | Identificador Único Universal do Lead |
-| `NOME_CONT` | String | Nome completo fornecido |
-| `MAIL_CONT` | String | E-mail corporativo/pessoal |
-| `EMPR_CONT` | String (Opt) | Empresa do solicitante |
-| `MENS_CONT` | Text | Conteúdo da mensagem institucional |
-| `IP_CONT` | String | Endereço IP de origem (Auditoria Forense) |
-| `UA_CONT` | String | User-Agent do navegador (Auditoria Técnica) |
-| `CREA_CONT` | DateTime | Timestamp de entrada automática |
-| `TIME_CONT` | DateTime | Timestamp de última atualização |
-
----
-
-## ☁️ Comunicação Enterprise (OAuth2)
-
-A TIVOR utiliza o protocolo mais seguro de nuvem da Microsoft para notificações:
-
-1.  **Auth Flow:** OAuth 2.0 Client Credentials (sem senha bruta).
-2.  **Protocolo:** Microsoft Graph API (Porta 443 HTTPS).
-3.  **Vantagem:** Imunidade a bloqueios de SMTP, MFA ou políticas de *Security Defaults*.
-4.  **Assinatura Digital:** Os e-mails são assinados pela conta oficial da organização, garantindo alta entregabilidade (Anti-Spam).
-
----
-
-## 🔒 Segurança & Auditoria
-
-- **Honeypot de 2ª Camada:** Filtro invisível no servidor que rejeita envios automáticos de robôs sem pesar no processamento.
-- **Validação Tipada Zod:** Bloqueio de injeções e dados malformados na entrada.
-- **Trilha de Auditoria:** Log persistente de rede (IP/UA) para conformidade com normas digitais.
-- **Resiliência:** O salvamento no banco é atômico. Se a notificação (e-mail) falhar, o lead **jamais** é perdido.
+| `UUID_CONT` | Primary Key (UUID v4) | Identificador imutável do evento de contato. |
+| `MAIL_CONT` | Indexed String | E-mail do solicitante para BI e CRM. |
+| `MENS_CONT` | Text | Conteúdo íntegro da mensagem capturada. |
+| `IP_CONT` | String | Endereço IP para auditoria de rede e segurança. |
+| `CREA_CONT` | Timestamp | Data e hora automática de entrada no sistema. |
 
 ---
 
 ## ⚙️ Configuração de Ambiente
 
-Crie um arquivo `.env` baseado no `.env.example`. Este arquivo é vital para a orquestração do banco e serviços de nuvem:
+A orquestração do sistema depende de um arquivo `.env` rigorosamente configurado:
 
 ```env
-# 1. DATABASE INFRASTRUCTURE (PostgreSQL)
-DATABASE_URL="postgresql://tivor_admin:your_secure_password@localhost:5432/tivor_db?schema=public"
+# Database Infrastructure
+DATABASE_URL="postgresql://user:pass@host:port/dbname?sslmode=require"
 
-# 2. MICROSOFT GRAPH API AUTHENTICATION (OAuth 2.0)
-AZURE_TENANT_ID="00000000-0000-0000-0000-000000000000"
-AZURE_CLIENT_ID="00000000-0000-0000-0000-000000000000"
-AZURE_CLIENT_SECRET="your_azure_app_secret_value"
+# Microsoft Azure (OAuth 2.0)
+AZURE_TENANT_ID="ID_DO_TENANT_AZURE"
+AZURE_CLIENT_ID="ID_DA_APP_AZURE"
+AZURE_CLIENT_SECRET="SECRETO_CLIENT_SECRET"
 
-# 3. NOTIFICATION SERVICE CONFIGURATION
-AZURE_SENDER_USER_EMAIL="workflow@yourdomain.com.br"
-SITE_CONTACT_EMAIL="atendimento@yourdomain.com.br"
-SMTP_FROM_NAME="Friendly From"
+# Notification Routes
+AZURE_SENDER_USER_EMAIL="workflow@seu-dominio.com.br"
+SITE_CONTACT_EMAIL="atendimento@tivor.agr.br"
 ```
 
 ---
 
-## 🔄 Guia de Manutenção & Script Master
+## 🛠 Instalação & Deployment
 
-Para garantir a soberania dos dados e a persistência do esquema de leads, o projeto conta com um script SQL de referência absoluta.
-
-### ⚠️ Inicialização da Tabela `SITE_CONT` (Master SQL)
-Se você estiver resetando o banco ou iniciando em um novo ambiente, utilize o script localizado em:
-**`prisma/governance/00_MASTER_SITE_CONT.sql`**
-
-Este script executa em bloco:
-1.  **Criação Física**: Tabela `SITE_CONT` com tipos otimizados.
-2.  **Indexação**: Performance Master para o campo de e-mail.
-3.  **Audit Trigger**: Gatilho SQL que garante a integridade do `updatedAt` independente do Prisma.
-4.  **Data Governance**: Comentários de metadados no catálogo do PostgreSQL.
-
-### Sincronização Prisma:
-Sempre que alterar o banco ou o script master, gere o cliente:
+### Ambiente de Desenvolvimento
 ```bash
+npm install
 npx prisma generate
+npm run dev
+```
+
+### Build de Produção
+```bash
+npm run build
+npm run start
 ```
 
 ---
 
-## 🚀 Instalação & Manutenção
-
-1.  **Instalação Inicial:**
-    ```bash
-    npm install
-    ```
-2.  **Sincronização de Banco (Schema):**
-    ```bash
-    npx prisma db push
-    npx prisma generate
-    ```
-3.  **Desenvolvimento:**
-    ```bash
-    npm run dev
-    ```
-4.  **Produção:**
-    ```bash
-    npm run build
-    npm run start
-    ```
+### 👤 Autor & Arquiteto
+**Christyan Silva** — Especialista em Engenharia de Software Full-Stack e Arquitetura de Sistemas Enterprise.
 
 ---
 
-### 👤 Autor & Desenvolvedor
-
-Este projeto foi concebido, arquitetado e desenvolvido integralmente por **Christyan Silva**. Cada linha de código, desde a infraestrutura de banco de dados até as animações 3D de alta performance, reflete o compromisso com a excelência técnica e a soberania digital.
-
----
-
-### 📜 Licença & Propriedade
-© 2026 **TIVOR Financial Architecture**.
-Propriedade Intelectual Privada. Todos os direitos reservados.
-Desenvolvido com excelência por [**Christyan Silva**](https://github.com/Christyan95).
-
+### 📜 Licença 
+© 2026 **TIVOR Financial Architecture**. Propriedade Intelectual Privada. Todos os direitos reservados.
+Desenvolvimento de Excelência por [**Christyan Silva**](https://github.com/Christyan95).

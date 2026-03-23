@@ -3,31 +3,45 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useLenis } from "lenis/react";
 import { useTranslation } from "@/i18n/TranslationContext";
+import { useParams, useRouter, usePathname } from "next/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const navLinks = [
-    { key: "item1", href: "#context" },
-    { key: "item2", href: "#challenges" },
-    { key: "item3", href: "#opportunity" },
-    { key: "item4", href: "#ecosystem" },
-    { key: "item5", href: "#specialization" },
+    { key: "item1", href: "#top" },
+    { key: "item4", href: "/hubjee" },
 ];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const lenis = useLenis();
+    const router = useRouter();
+    const pathname = usePathname();
+    const params = useParams();
     const t = useTranslation();
+    const locale = (params?.locale as string) || "pt";
+    const lenis = useLenis();
 
     const handleScroll = (href: string) => {
         setIsOpen(false);
+        const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
+
         if (href.startsWith("#")) {
-            const target = document.querySelector(href);
-            if (target && lenis) {
-                lenis.scrollTo(target as HTMLElement, { duration: 2.0, easing: (t: number) => 1 - Math.pow(1 - t, 4) });
+            if (isHomePage) {
+                const target = document.querySelector(href);
+                if (target && lenis) {
+                    lenis.scrollTo(target as HTMLElement, { 
+                        duration: 2.0, 
+                        easing: (t: number) => 1 - Math.pow(1 - t, 4) 
+                    });
+                }
+            } else {
+                router.push(`/${locale}${href}`);
             }
+        } else {
+            router.push(`/${locale}${href}`);
         }
     };
 
@@ -35,7 +49,7 @@ const Navbar = () => {
         <>
             <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 border-b border-slate-200 bg-white/80 backdrop-blur-md shadow-sm">
                 {/* Logo */}
-                <a href="/" className="flex items-center gap-2 group">
+                <a href={`/${locale}`} className="flex items-center gap-2 group">
                     <Image
                         src="/icone.webp"
                         alt="Tivor Logo"
@@ -48,12 +62,12 @@ const Navbar = () => {
                 </a>
 
                 {/* Desktop Navigation */}
-                <div className="hidden lg:flex items-center gap-1">
+                <div className="hidden lg:flex items-center gap-0 xl:gap-1">
                     {navLinks.map((link) => (
                         <button
                             key={link.key}
                             onClick={() => handleScroll(link.href)}
-                            className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all duration-200"
+                            className="px-3 xl:px-4 py-2 text-xs xl:text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-full transition-all duration-200"
                         >
                             {(t.navbar as any)[link.key]}
                         </button>
@@ -63,13 +77,6 @@ const Navbar = () => {
                 {/* Actions */}
                 <div className="flex items-center gap-3">
                     <LanguageSwitcher />
-                    <button
-                        onClick={() => handleScroll("#contact")}
-                        className="hidden sm:block px-6 py-2.5 text-sm font-semibold text-white transition-all bg-emerald-600 rounded-full hover:bg-emerald-700 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
-                        aria-label={t.navbar.cta}
-                    >
-                        {t.navbar.cta}
-                    </button>
 
                     {/* Mobile Hamburger */}
                     <button
@@ -105,14 +112,6 @@ const Navbar = () => {
                                     {(t.navbar as any)[link.key]}
                                 </motion.button>
                             ))}
-                            <div className="pt-4 border-t border-slate-100 mt-2">
-                                <button
-                                    onClick={() => handleScroll("#contact")}
-                                    className="w-full px-6 py-3 text-sm font-semibold text-white bg-emerald-600 rounded-xl hover:bg-emerald-700 active:scale-95 transition-all shadow-md"
-                                >
-                                    {t.navbar.cta}
-                                </button>
-                            </div>
                         </div>
                     </motion.div>
                 )}

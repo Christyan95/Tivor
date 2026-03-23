@@ -21,9 +21,9 @@ export const Services = () => {
     }));
 
     return (
-        <section id="services" className="py-24 lg:py-32 bg-slate-50 relative">
+        <section id="services" className="py-16 lg:py-20 bg-slate-50 relative">
             <div className="container mx-auto px-6 max-w-7xl">
-                <div className="text-center mb-24 max-w-4xl mx-auto">
+                <div className="text-center mb-16 lg:mb-24 max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -37,31 +37,37 @@ export const Services = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl sm:text-5xl lg:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.05]"
+                        className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-black text-slate-900 mb-8 tracking-tighter leading-[1.05]"
                     >
                         {t.services.titleLine1} <br className="hidden md:block" /> {t.services.titleLine2}
                     </motion.h2>
-                    <p className="text-slate-600 text-xl font-light leading-relaxed">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-slate-600 text-lg sm:text-xl font-light leading-relaxed px-4"
+                    >
                         {t.services.desc1} <strong className="text-slate-900 font-semibold border-b border-slate-300">{t.services.desc1Strong}</strong>.
-                    </p>
+                    </motion.p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                     {mergedPillars.map((pillar: any, i: number) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                            className="bg-white border border-slate-200 p-8 rounded-[32px] relative overflow-hidden group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-all duration-500 flex flex-col h-full cursor-default"
+                            className="bg-white border border-slate-200 p-8 rounded-[32px] relative overflow-hidden group shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col h-full cursor-default"
                         >
                             <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${pillar.color} opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700 rounded-bl-full`} />
 
                             <div className="flex flex-col justify-between mb-8 relative z-10 gap-6">
-                                <span className="text-5xl font-black text-slate-100 group-hover:text-slate-200 tracking-tighter transition-colors">0{pillar.num}.</span>
-                                <div className={`w-16 h-16 ${pillar.bgIcon} rounded-[20px] flex items-center justify-center border border-white`}>
-                                    <pillar.icon className={`w-8 h-8 ${pillar.iconColor}`} />
+                                <span className="text-4xl sm:text-5xl font-black text-slate-100 group-hover:text-slate-200 tracking-tighter transition-colors">0{pillar.num}.</span>
+                                <div className={`w-16 h-16 ${pillar.bgIcon} rounded-[20px] flex items-center justify-center border border-white group-hover:scale-110 transition-transform duration-300`}>
+                                    <pillar.icon className={`w-8 h-8 ${pillar.iconColor} group-hover:rotate-3 transition-transform`} />
                                 </div>
                             </div>
 
@@ -69,7 +75,7 @@ export const Services = () => {
                                 {pillar.title}
                             </h3>
 
-                            <p className="text-slate-600 text-base font-light leading-relaxed relative z-10 flex-grow">
+                            <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed relative z-10 flex-grow">
                                 {pillar.desc}
                             </p>
 
