@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 18, 24, 31;
+  /* #12181F Grafite Profundo */
+  --background-start-rgb: 248, 249, 250;
+  /* #F8F9FA Branco Gelo */
+  --background-end-rgb: 248, 249, 250;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  /* slate-100 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #64748B;
+  /* slate-500 (tivor-gray) */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #12181F;
+  /* slate-900 (tivor-dark) */
+}
+
+::selection {
+  background-color: rgba(0, 119, 255, 0.2);
+  /* tivor-blue/20 */
+  color: #12181F;
+  /* tivor-dark */
+}

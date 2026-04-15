@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model CTRL_RSET {
+  UUID_RSET String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  PHON_RSET String    @db.VarChar(20)
+  USER_RSET String    @db.VarChar(150)
+  CODE_RSET String    @db.VarChar(6)
+  STAT_RSET String    @default("PENDENTE") @db.VarChar(20)
+  FAIL_RSET Int       @default(0)
+  EXPI_RSET DateTime  @db.Timestamptz(6)
+  CREA_RSET DateTime? @default(now()) @db.Timestamptz(6)
+  UPDT_RSET DateTime? @default(now()) @db.Timestamptz(6)
+
+  @@index([PHON_RSET], map: "idx_ctrl_rset_phone")
+  @@index([STAT_RSET], map: "idx_ctrl_rset_status")
+}
+
+model INVE_HORT {
+  IDEN_ITEM Int       @id @default(autoincrement())
+  NAME_ITEM String    @db.VarChar(255)
+  BRAN_NAME String    @db.VarChar(100)
+  CATE_NAME String    @db.VarChar(100)
+  COND_TYPE String    @db.VarChar(50)
+  VALU_PRIC Decimal   @db.Decimal(12, 2)
+  ORIG_PRIC Decimal?  @db.Decimal(12, 2)
+  IMAG_URLS String?
+  DESC_TEXT String?
+  STOC_AMOU Int?      @default(1)
+  DATE_CREA DateTime? @default(now()) @db.Timestamp(6)
+  DATE_UPDA DateTime? @default(now()) @db.Timestamp(6)
+
+  @@index([CATE_NAME], map: "IDX_CATE_HORT")
+  @@index([NAME_ITEM], map: "IDX_NAME_HORT")
+}
+
+model Lead {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @map("UUID_CONT") @db.Uuid
+  name      String   @map("NOME_CONT") @db.VarChar(255)
+  email     String   @map("MAIL_CONT") @db.VarChar(255)
+  company   String?  @map("EMPR_CONT") @db.VarChar(150)
+  message   String   @map("MENS_CONT")
+  ip        String?  @map("IP_CONT") @db.VarChar(45)
+  userAgent String?  @map("UA_CONT")
+  createdAt DateTime @default(now()) @map("CREA_CONT") @db.Timestamptz(6)
+  updatedAt DateTime @default(now()) @updatedAt @map("TIME_CONT") @db.Timestamptz(6)
+
+  @@index([email], map: "idx_site_cont_mail")
+  @@map("SITE_CONT")
+}
